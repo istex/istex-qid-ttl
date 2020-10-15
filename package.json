@@ -1,0 +1,26 @@
+{
+  "name": "istex-qid-ttl",
+  "version": "4.1.2",
+  "description": "[ezmaster](https://github.com/Inist-CNRS/ezmaster) app used to auto upgrade an ezmaster application/instance",
+  "scripts": {
+    "serve": "http-server -p 3000",
+    "cron": "node crontab.js",
+    "start": "npm-run-all --parallel cron serve",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niederle/istex-qid-ttl.git"
+  },
+  "license": "Cecill-B",
+  "bugs": {
+    "url": "https://github.com/niederle/istex-qid-ttl/issues"
+  },
+  "homepage": "https://github.com/niederle/istex-qid-ttl#readme",
+  "dependencies": {
+    "http-server": "^0.10.0",
+    "node-schedule": "^1.2.4",
+    "npm-run-all": "^4.1.1",
+    "shelljs": "^0.7.8"
+  }
+}
