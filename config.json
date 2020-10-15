@@ -1,14 +1,12 @@
 {
-  "crontab" : {
-    "when": "0 4 * * *",
-    "qids" : [
-      {
-        "q_id": "4c8246b6926fc4dc11a0ed76209f375b",
-        "comment": "Corpus Beethoven v1"
-      }
-    ],
-    "options": {
-      "silent": true
+  "crontab": {
+    "when": "0 4 * * *"
+  },
+  "qids" : [
+    {
+      "q_id": "4c8246b6926fc4dc11a0ed76209f375b",
+      "comment": "Corpus Beethoven v1"
     }
-  }
+  ],
+  "istexApiUrl": "https://api.istex.fr"
 }

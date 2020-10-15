@@ -1,18 +1,23 @@
-var schedule = require('node-schedule');
-var shell    = require('shelljs');
-var config   = require('./config.json');
+const schedule = require("node-schedule");
+const config = require("./config.json");
+const got = require("got");
+const url = require("url");
 
-var j = schedule.scheduleJob(config.crontab.when, runCrontabStuff);
+const j = schedule.scheduleJob(config.crontab.when, runCrontabStuff);
 
 function runCrontabStuff() {
-  // config.crontab.commands.forEach(function (cmd) {
-  //   if (!config.crontab.options.silent) {
-  //     console.log(new Date() + ' - running cron task : ' + cmd);
-  //   }
-  //   shell.exec(cmd, {
-  //     silent: config.crontab.options.silent,
-  //     env: Object.assign(process.env, config.env)
-  //   });
-  // });
+  config.qids.forEach(({ qid, comment }) => {
+    (async () => {
+      try {
+        if (!qid.match(/[0-9a-f]{32}/)) {
+          console.log("qid " + qid + "seems to be syntaxically incorrect");
+        } else {
+          const response = await got(config.istexApiUrl + "/q_id/" + qid);
+        }        
+      } catch (error) {
+        console.log(`Error requesting qid ${qid} on ${config.istexApiUrl}: ${error.response.body}`);
+      }
+    })();
+  });
 }
 runCrontabStuff();
