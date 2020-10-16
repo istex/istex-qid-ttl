@@ -1,4 +1,4 @@
-FROM node:8.4.0
+FROM node:12.19.0
 
 # to have git in the shell
 # (to be able to use it in the crontab stuff)
@@ -9,8 +9,7 @@ WORKDIR /app
 
 # install npm dependencies
 COPY ./package.json /app/package.json
-RUN npm install && \
-    npm install -g ezmaster-cli@4.1.0
+RUN npm install
 
 COPY ./crontab.js /app
 COPY ./config.json  /app
