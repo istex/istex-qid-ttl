@@ -23,9 +23,6 @@
         },
         ...
       ]
-    },
-    "options": {
-      "silent": false
     }
   }
   ```
