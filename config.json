@@ -1,11 +1,23 @@
 {
   "crontab": {
-    "when": "0 4 * * *"
+    "when": "* * * * *"
   },
   "qids" : [
     {
       "q_id": "4c8246b6926fc4dc11a0ed76209f375b",
       "comment": "Corpus Beethoven v1"
+    },
+    {
+      "q_id": "b77349be69cb217148644c7b16194405",
+      "comment": "Systématique animale v1"
+    },
+    {
+      "q_id": "b77349be69cb217148644c7z16194405",
+      "comment": "avec une erreur de syntaxe exprès"
+    },
+    {
+      "q_id": "b77349be69cb217148644c7b16194406",
+      "comment": "un q_id qui n'existe pas"
     }
   ],
   "istexApiUrl": "https://api.istex.fr"
