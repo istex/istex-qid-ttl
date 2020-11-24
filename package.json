@@ -7,7 +7,7 @@
     "cron": "node crontab.js",
     "start": "npm-run-all --parallel cron serve",
     "insertversion:makefile": "cross-var sed -i \"s#\\( istex/istex-qid-ttl:\\)\\([\\.a-z0-9]\\+\\)#\\1$npm_package_version#g\" Makefile",
-    "version": "npm run insertversion:makefile && git add makefile",
+    "version": "npm run insertversion:makefile && git add Makefile",
     "postversion": "git push && git push --tags"
   },
   "repository": {
