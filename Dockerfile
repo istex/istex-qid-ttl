@@ -9,7 +9,7 @@ WORKDIR /app
 
 # install npm dependencies
 COPY ./package.json /app/package.json
-RUN npm install
+RUN npm install --only=production
 
 COPY ./crontab.js /app
 COPY ./config.json  /app
